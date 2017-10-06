@@ -1,0 +1,82 @@
+
+<!--<?php
+include "config.php";
+?>
+<?php
+if(isset($_POST['login']))
+{
+  if(($_POST['name']!='') && ($_POST['psw']!=''))
+  {
+  $se=mysql_query("select * from login where uname='".$_POST['name']."'");
+  $fe=mysql_fetch_array($se);
+  if($fe['uname']==$_POST['name'])
+  {
+  if($fe['password']==$_POST['psw'])
+  {
+   // $_SESSION['name']=$fe['name'];
+    $_SESSION['name']=$fe['uname'];
+echo "<script>alert('successfully login');location.href='main.php'</script>";
+  }
+  else
+  {
+    echo "<script>alert('Enter Correct Password')</script>";
+  }
+  }
+  
+  else
+  {
+    echo "<script>alert('Enter Valid User Id')</script>";
+  }
+}
+}
+?>-->
+<html>
+<head>
+  <title>home</title>
+  <script>document.createElement("label")</script>
+  <style>
+     label{
+      font-size: 20px;
+}
+
+/*article{border:1px solid black; margin:5px; padding:8px;}*/
+div {
+    background-color: khaki;
+    width: 300px;
+    border: 15px solid black;
+    padding: 25px;
+    margin: 25px;
+}
+
+  </style>
+</head>
+<body bgcolor="#eeeeee">
+<center>
+<div>
+<form>
+<section>
+<article>
+  <label><b>Username</b></label><br>
+<input type="text" name="id" placeholder="Username"><br>
+
+<label><b>Password</b></label><br>
+
+<input type="Password" name="id" placeholder="Password">
+<br>
+<label><b>Submit</b></label><br>
+<input type="submit" name="submit" onclick="alert('submitted succesfully')">
+
+</article>
+
+
+</section>
+
+</center>
+
+
+
+</form>
+</div>
+
+</body>
+</html>
